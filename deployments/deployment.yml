@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demo
+  namespace: demo
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: demo
+  template:
+    metadata:
+      labels:
+        app: demo
+    spec:
+      containers:
+        - name: demo
+          image: fabrice10/demo:main-40add28f0f34862984443a69f88510e63a6d5b6d
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8000

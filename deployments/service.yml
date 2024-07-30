@@ -1,0 +1,14 @@
+# Service YAML
+apiVersion: v1 
+kind: Service
+metadata:
+  name: demo
+  namespace: demo
+spec:
+  selector:
+    app: demo
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8000
+  type: NodePort
